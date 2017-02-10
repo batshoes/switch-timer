@@ -1,0 +1,44 @@
+<div class="header">
+    <img src="https://s-media-cache-ak0.pinimg.com/originals/e5/59/31/e55931149170d8d22ea6793958d8a7ea.png">
+</div>
+
+<div class="timer">
+    <div id="days"></div>
+    <div id="hours"></div>
+    <div id="minutes"></div>
+    <div id="seconds"></div>
+</div>
+
+
+<script>
+var end = new Date('03/03/2017 8:00 AM');
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById('days').innerHTML = days + ' days \n';
+        document.getElementById('hours').innerHTML = hours + ' hrs \n';
+        document.getElementById('minutes').innerHTML = minutes + ' mins \n';
+        document.getElementById('seconds').innerHTML = seconds + ' secs\n';
+    }
+
+    timer = setInterval(showRemaining, 1000);
+</script>

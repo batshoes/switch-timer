@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+    font-family: "Raleway";
+    color: #E92136;
+}
+
+.header {
+    text-align: center;
+    img {
+        width: 30%;
+
+    }
+    h1 {
+        font-size: 45px;
+    }
+}
+.timer {
+    font-size: 45px;
+    text-align: center;
+
+    #days, #hours, #minutes, #seconds {
+        margin: 0 auto;
+        width: 40%;
+    }
+}
